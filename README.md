@@ -14,10 +14,17 @@ This plugin is a parser filter plugin.
 
       <parsers>
         <parse>
-          @type nginx
+          @type regexp
+          expression /.../
         </parse>
         <parse>
-          @type apache2
+          @type regexp
+          expression /.../
+        </parse>
+        <parse>
+          @type custom_parser
+          custom_parser_param  foo
+          custom_parser_param2 bar
         </parse>
         <parse>
           @type none

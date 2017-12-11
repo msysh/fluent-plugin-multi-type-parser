@@ -50,18 +50,17 @@ module Fluent
           parsers_config = e.elements
         end
 
-        @section_parsers[0]['section_parse'].each do | p |
-          next if p['@type'].nil?
+        unless !parsers_config.nil? && parsers_config.length == 1
+          raise Fluent::ConfigError, "section <parses> is required."
+        end
+
+        parsers_config.each do | p |
+          next unless ['parse'].include?(p.name)
+          next unless p.has_key?('@type')
 
           parser = Fluent::Plugin.new_parser(p['@type'], parent: self)
-
-          parsers_config.each do |e|
-            next unless ['parse'].include?(e.name)
-            next unless p['@type'].eql?(e['@type'])
-
-            parser.configure(e)
-            @parsers << parser
-          end
+          parser.configure(p)
+          @parsers << parser
         end
       end
 

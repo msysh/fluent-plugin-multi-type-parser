@@ -13,6 +13,6 @@ class MultiTypeParserFilterTest < Test::Unit::TestCase
   private
 
   def create_driver(conf)
-    Fluent::Test::Driver::Filter.new(Fluent::Plugin::Multi-type-parserFilter).configure(conf)
+    Fluent::Test::Driver::Filter.new(Fluent::Plugin::MultiTypeParserFilter).configure(conf)
   end
 end
