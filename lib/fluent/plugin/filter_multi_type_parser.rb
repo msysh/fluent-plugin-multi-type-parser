@@ -50,7 +50,7 @@ module Fluent
           parsers_config = e.elements
         end
 
-        unless !parsers_config.nil? && parsers_config.length == 1
+        unless !parsers_config.nil? && parsers_config.length > 0
           raise Fluent::ConfigError, "section <parses> is required."
         end
 
