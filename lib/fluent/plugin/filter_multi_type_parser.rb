@@ -51,7 +51,7 @@ module Fluent
         end
 
         unless !parsers_config.nil? && parsers_config.length > 0
-          raise Fluent::ConfigError, "section <parses> is required."
+          raise Fluent::ConfigError, "section <parse> is required."
         end
 
         parsers_config.each do | p |

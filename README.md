@@ -1,6 +1,6 @@
 # fluent-plugin-multi-type-parser
 
-[Fluentd](http://fluentd.org/) filter plugin to do something.
+[Fluentd](http://fluentd.org/) filter plugin to parse multi format message.
 
 **for v1.0(v0.14) / td-agent3 only!**
 
@@ -31,38 +31,6 @@ This plugin is a parser filter plugin.
         </parse>
       </parsers>
     </filter>
-
-## Installation
-
-### RubyGems
-
-```
-$ gem install fluent-plugin-multi-type-parser
-```
-
-### Bundler
-
-Add following line to your Gemfile:
-
-```ruby
-gem "fluent-plugin-multi-type-parser"
-```
-
-And then execute:
-
-```
-$ bundle
-```
-
-## Configuration
-
-You can generate configuration template:
-
-```
-$ fluent-plugin-format-config filter multi-type-parser
-```
-
-You can copy and paste generated documents here.
 
 ## Copyright
 
