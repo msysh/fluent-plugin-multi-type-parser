@@ -57,7 +57,7 @@ module Fluent
         parsers_config.each do | p |
           next unless ['parse'].include?(p.name)
           next unless p.has_key?('@type')
-
+          log.info("detect parser #{p['@type']}")
           parser = Fluent::Plugin.new_parser(p['@type'], parent: self)
           parser.configure(p)
           @parsers << parser
